@@ -1,0 +1,18 @@
+# development:
+#   adapter: postgresql
+#   database: meibo_development
+# test:
+#   adapter: postgresql
+#   database: meibo_test
+# production:
+#   adapter: postgresql
+#   database: meibo
+development:
+  adapter: sqlite3
+  database: meibo_development.db
+test:
+  adapter: sqlite3
+  database: meibo_test.db
+production:
+  adapter: sqlite3
+  database: meibo.db

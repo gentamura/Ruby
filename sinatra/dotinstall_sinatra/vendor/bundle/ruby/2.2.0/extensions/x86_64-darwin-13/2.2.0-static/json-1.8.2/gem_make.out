@@ -1,0 +1,9 @@
+/Users/gentamura/.rbenv/versions/2.2.0/bin/ruby -r ./siteconf20150124-89873-1d1o4qo.rb extconf.rb 
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+make "DESTDIR=" install

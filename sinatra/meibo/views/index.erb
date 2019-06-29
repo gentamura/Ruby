@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8" />
+  
+  <title>名簿アプリ</title>
+  
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+  <script src="js/app.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <table class="table">
+      <tr>
+        <th>学籍番号</th>
+        <th>氏名</th>
+        <th>E-mail</th>
+      </tr>
+
+    <% @students.each do |stu| %>
+      <tr>
+        <td><%= stu.id %></td>
+        <td><%= stu.name %></td>
+        <td><%= stu.email %></td>
+        <form action="del" method="post">
+        <td><input type="submit" value="削除" class="btn btn-default btn-xs"></td>
+        <input type="hidden" name="id" value="<%= stu.id %>">
+        <input type="hidden" name="_method" value="delete">
+        </form>
+      </tr>
+    <% end %>
+      <form method="post" action="new">
+        <tr>
+          <td><input type="text" name="id"></td>
+          <td><input type="text" name="name"></td>
+          <td><input type="text" name="email"></td>
+          <td><input type="submit" value="登録" class="btn btn-default btn-xs"></td>
+        </tr>
+      </form>
+    </table>  
+  </div>
+  
+</body>
+</html>
